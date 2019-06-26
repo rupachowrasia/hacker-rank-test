@@ -142,4 +142,123 @@ function repeatedString(s, n) {
     return count; */   
 }
 ```
- 
+
+#### **6. Complete the birthdayCakeCandles function below**
+```sh
+function birthdayCakeCandles(ar) { 
+    if (ar.length >= 1 && ar.length <= 1000000) {
+        const max = Math.max(...ar);
+        return ar.filter(x => x === max).length;
+        // failed in some case
+        /*ar.sort();
+        let talestCandel = ar[ar.length - 1];
+        let count = 0;
+        ar.map((value, key) => {
+            if (value == talestCandel) {
+                count++;
+            }
+        });
+        return count;*/  
+    }
+}
+```
+
+#### **7. Complete the alternatingCharacters function below**
+```sh
+function alternatingCharacters(s) {
+    let s1 = [];
+    for (let i = 0; i < s.length; i++) {
+            if (s[i] == s[i + 1]) {
+                s1.push(s[i]);
+            }
+    }
+    return s1.length;
+}
+```
+
+#### **8. Complete the libraryFine function below**
+```sh
+function libraryFine(d1, m1, y1, d2, m2, y2) {
+    let fine = 0;
+
+    if (d1 <= d2 && m1==m2 && y1==y2) {
+        fine = 0;
+    }
+    else if (d1 > d2 && m1 == m2 && y1 ==y2) {
+        fine = 15 * (d1-d2);
+    }
+    else if (m1 > m2 && y1 == y2) {
+        fine = 500 * (m1 - m2);
+    }
+    else if (y1 > y2) {
+        fine = 10000;
+    }
+    return fine;
+}
+```
+
+#### **9. Complete the countApplesAndOranges function below**
+```sh
+function countApplesAndOranges(s, t, a, b, apples, oranges) {
+    let appleCount = 0;
+    let orangeCount = 0;
+
+    let applesArr = apples.map(key => a + key);
+    let orangesArr = oranges.map(key => b + key);
+
+    applesArr.forEach(key => {
+        if (key >= s && key <= t) {
+            appleCount = appleCount + 1;
+        }
+    });
+    orangesArr.forEach(key => {
+        if (key >= s && key <= t) {
+            orangeCount = orangeCount + 1;
+        }
+    });
+    console.log(appleCount);
+    console.log(orangeCount);
+}
+```
+
+#### **10. Complete the simpleArraySum function below**
+```sh
+function simpleArraySum(ar) {
+    let sum = 0;
+    for (let i = 0; i < ar.length; i++){
+        sum = sum + ar[i];
+    }
+    return sum;
+}
+```
+
+#### **11. Complete the 'diagonalDifference' function below**
+```sh
+function diagonalDifference(n, arr) {
+    let sumLeft = 0;
+    let sumRight = 0;
+    for (let i = 0; i < n; i++){
+        sumLeft = sumLeft + arr[i][i];
+    }
+
+    for (let i = 0; i < n; i++) {
+        sumRight = sumRight + arr[i][n-1-i];
+    }
+
+    return Math.abs(sumLeft - sumRight);
+}
+```
+
+#### **12. Complete the getMoneySpent function below**
+```sh
+function getMoneySpent(keyboards, drives, b) {
+    let totalCost = [];
+
+    keyboards.forEach(keyboard => drives.forEach(drive => {
+        totalCost.push(keyboard + drive)
+    }));
+    let cost = totalCost.filter(c => c <= b);
+
+    return (Math.max(...cost) == '-Infinity') ? "-1" : Math.max(...cost);
+}
+```

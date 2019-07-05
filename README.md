@@ -312,13 +312,15 @@ function plusMinus(arr) {
 }
 ```
 
-`summation formula: 
+```sh
+summation formula: 
 1+2+3+......20 = n(n+1)/2
 1*2 + 2*2 + 3*2 + ........ n*2 = {n(n+1)(2n+1)}/6
 1*3 + 2*3 + 3*3 + ........ n*3 = (n(n+1)/2)*2
 
 tn = a + (n - 1)d;
-sn = [2a+(n-1)d]n/2`
+sn = [2a+(n-1)d]n/2
+```
 
 #### **16. Multiples of 3 and 5**
 ```sh

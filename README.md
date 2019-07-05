@@ -262,3 +262,110 @@ function getMoneySpent(keyboards, drives, b) {
     return (Math.max(...cost) == '-Infinity') ? "-1" : Math.max(...cost);
 }
 ```
+
+#### **13. Complete the compareTriplets function below**
+```sh
+function compareTriplets(a, b) {
+    let alice_count = 0;
+    let bob_count = 0;
+    for (let i = 0; i < a.length; i++){
+        if (a[i] > b[i]) {
+            alice_count = alice_count + 1;
+        } else if (a[i] < b[i]) {
+            bob_count = bob_count + 1;
+        } else if (a[i] == b[i]) {
+
+        }
+    }
+    return [alice_count, bob_count];
+}
+```
+
+#### **14. Complete the aVeryBigSum function below**
+```sh
+function aVeryBigSum(ar) { 
+    return ar.reduce((accumulator, currentValue) => accumulator + currentValue);
+}
+```
+
+#### **15. Complete the plusMinus function below**
+```sh
+function plusMinus(arr) {
+    let total = arr.length;
+    let positive = 0;
+    let negative = 0;
+    let zeros = 0;
+    for (let i = 0; i < arr.length; i++){
+        if (arr[i] == 0) {
+            zeros = zeros + 1; 
+        }
+        if (arr[i] > 0) {
+            positive = positive + 1;
+        }
+        if (arr[i] < 0) {
+            negative = negative + 1;
+        }
+    }
+    console.log(positive / total);
+    console.log(negative / total);
+    console.log(zeros / total);
+}
+```
+
+`summation formula: 
+1+2+3+......20 = n(n+1)/2
+1*2 + 2*2 + 3*2 + ........ n*2 = {n(n+1)(2n+1)}/6
+1*3 + 2*3 + 3*3 + ........ n*3 = (n(n+1)/2)*2
+
+tn = a + (n - 1)d;
+sn = [2a+(n-1)d]n/2`
+
+#### **16. Multiples of 3 and 5**
+```sh
+function main() {
+
+    var BigNumber = require('bignumber.js'); // add this library
+
+    var t = parseInt(readLine()); // given
+    for (var a0 = 0; a0 < t; a0++) { // given
+        var n = new BigNumber(readLine()); //given, just add new BigNumber instead of parseInt
+
+        const a = n.minus(1).dividedBy(3).floor();
+        const b = n.minus(1).dividedBy(5).floor();
+        const c = n.minus(1).dividedBy(15).floor();
+        const sum3 = a.times(3).times(a.plus(1)).dividedBy(2);
+        const sum5 = b.times(5).times(b.plus(1)).dividedBy(2)
+        const sum15 = c.times(15).times(c.plus(1)).dividedBy(2)
+        const sum = sum3.plus(sum5).minus(sum15);
+        console.log(sum.toString());
+
+        // failed in some cases
+        /*let arr = [];
+        for (let i = 0; i < n; i++) {
+            if (i % 3 == 0 || i % 5 == 0) {
+                arr.push(i);
+            }
+        }
+        let uniArr = [...new Set(arr)].reduce((x, y) => x + y);
+        console.log(uniArr);*/
+    }  
+}
+```
+
+#### **17. Complete the bonAppetit function below**
+```sh
+function bonAppetit(bill, k, b) {
+    let bActual = (bill.filter((value, index, arr) => index!=k)).reduce((x,y) => x+y)/2;
+    if (b== bActual) {
+        console.log("Bon Appetit");
+    }
+    if (b > bActual) {
+        console.log(b - bActual);
+    }
+}
+```
+
+
+
+
+
